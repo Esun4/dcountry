@@ -1,14 +1,7 @@
-//
-//  dailycountryApp.swift
-//  dailycountry
-//
-//  Created by Ethan Sun on 2026-02-05.
-//
-
 import SwiftUI
 
 @main
-struct dailycountryApp: App {
+struct DailyCountryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
