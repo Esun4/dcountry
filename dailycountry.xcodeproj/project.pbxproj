@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		AA5094312F4008E30094C300 /* dailycountry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = dailycountry.xcodeproj; sourceTree = SOURCE_ROOT; };
 		AA51CDDF2F359CAF00E9474C /* dailycountry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailycountry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,9 +30,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA50944D2F400B830094C300 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AA51CDD62F359CAF00E9474C = {
 			isa = PBXGroup;
 			children = (
+				AA5094312F4008E30094C300 /* dailycountry.xcodeproj */,
 				AA51CDE12F359CAF00E9474C /* dailycountry */,
 				AA51CDE02F359CAF00E9474C /* Products */,
 			);
@@ -97,6 +104,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA51CDE02F359CAF00E9474C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA50944D2F400B830094C300 /* Products */;
+					ProjectRef = AA5094312F4008E30094C300 /* dailycountry.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AA51CDDE2F359CAF00E9474C /* dailycountry */,

@@ -3,116 +3,257 @@ import UIKit
 
 struct ContentView: View {
     @StateObject private var viewModel = GameViewModel()
-    @State private var showingPicker = false
     @State private var showingResult = false
+    @State private var guessText = ""
+    @FocusState private var isSearchFocused: Bool
+
+    private var displayedCountries: [Country] {
+        let trimmed = guessText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty {
+            return Countries.all
+        }
+        return Countries.all.filter { $0.name.localizedCaseInsensitiveContains(trimmed) }
+    }
+
+    private var cluesRemaining: Int {
+        max(0, 5 - viewModel.state.revealedClues)
+    }
+
+    private var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        return formatter.string(from: Date())
+    }
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    header
-                    clueSection
-                    guessSection
+        ZStack {
+            // Background gradient
+            LinearGradient(
+                colors: [Color.white, Color(red: 0.93, green: 0.91, blue: 0.98)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        header
+                        cluesRemainingBar
+                        clueSection
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                    .padding(.bottom, 20)
                 }
-                .padding(20)
+
+                Divider()
+                guessSection
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 16)
+                    .background(Color.white.opacity(0.8))
             }
-            .toolbar(.hidden, for: .navigationBar)
-            .onAppear {
-                viewModel.loadOrCreateToday()
+        }
+        .onAppear {
+            viewModel.loadOrCreateToday()
+        }
+        .onChange(of: viewModel.state.status) { oldStatus, newStatus in
+            if newStatus != .playing {
+                showingResult = true
             }
-            .onChange(of: viewModel.state.status) { newStatus in
-                if newStatus != .playing {
-                    showingResult = true
-                }
+        }
+        .sheet(isPresented: $showingResult) {
+            ResultSheetView(
+                status: viewModel.state.status,
+                answer: viewModel.answerCountry,
+                dateKey: viewModel.state.dateKey,
+                shareText: viewModel.shareSummary()
+            ) {
+                showingResult = false
             }
-            .sheet(isPresented: $showingPicker) {
-                CountryPickerView(countries: Countries.all) { country in
-                    viewModel.submitGuess(country)
-                }
-            }
-            .sheet(isPresented: $showingResult) {
-                ResultSheetView(
-                    status: viewModel.state.status,
-                    answer: viewModel.answerCountry,
-                    dateKey: viewModel.state.dateKey,
-                    shareText: viewModel.shareSummary()
-                ) {
-                    showingResult = false
-                }
-            }
-            .alert("Already guessed", isPresented: $viewModel.showDuplicateGuessAlert) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Pick a different country.")
-            }
+        }
+        .alert("Already guessed", isPresented: $viewModel.showDuplicateGuessAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("Pick a different country.")
         }
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Daily Country")
-                .font(.largeTitle.bold())
-                .onLongPressGesture {
-                    viewModel.resetToday()
-                }
-            Text("Puzzle for \(viewModel.state.dateKey)")
+        HStack(alignment: .center) {
+            // Globe icon
+            ZStack {
+                Circle()
+                    .fill(Color(red: 0.35, green: 0.34, blue: 0.63))
+                    .frame(width: 48, height: 48)
+                Image(systemName: "globe")
+                    .font(.title2)
+                    .foregroundColor(.white)
+            }
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Daily Country")
+                    .font(.title2.bold())
+                    .onLongPressGesture {
+                        viewModel.resetToday()
+                    }
+                Text("Guess today's country")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+
+            Spacer()
+
+            // Date badge
+            HStack(spacing: 4) {
+                Image(systemName: "calendar")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Text(formattedDate)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundColor(.primary)
+            }
+        }
+    }
+
+    private var cluesRemainingBar: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "lightbulb")
+                .foregroundColor(.orange)
+            Text("Clues Remaining: \(Text("\(cluesRemaining)").bold())")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            Text("Guesses remaining: \(max(0, 5 - viewModel.state.guesses.count))")
-                .font(.subheadline.weight(.semibold))
+            Spacer()
         }
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.white)
+                .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
+        )
     }
 
     private var clueSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Clues")
-                .font(.title3.bold())
+            Text("CLUES")
+                .font(.caption.bold())
+                .foregroundColor(.primary)
+                .tracking(1)
+
             ForEach(0..<viewModel.state.revealedClues, id: \.self) { index in
                 let clue = viewModel.answerCountry.clues[index]
-                ClueCardView(clue: clue, index: index + 1)
+                ClueCardView(clue: clue)
             }
         }
     }
 
     private var guessSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Button(action: {
-                showingPicker = true
-            }) {
-                Text("Pick a country")
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
-                    .background(viewModel.state.status == .playing ? Color.blue : Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
+        VStack(alignment: .leading, spacing: 10) {
+            // Country list shown when search is focused
+            if isSearchFocused && viewModel.state.status == .playing {
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(displayedCountries) { country in
+                            Button {
+                                viewModel.submitGuess(country)
+                                guessText = ""
+                                isSearchFocused = false
+                            } label: {
+                                HStack {
+                                    Text(country.name)
+                                        .foregroundColor(.primary)
+                                    Spacer()
+                                    Text(country.continent)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 12)
+                            }
+                            Divider().padding(.leading, 16)
+                        }
+                    }
+                }
+                .frame(maxHeight: 200)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white)
+                        .shadow(color: .black.opacity(0.08), radius: 8, y: -2)
+                )
             }
-            .disabled(viewModel.state.status != .playing)
 
-            Text("Guess history")
-                .font(.title3.bold())
+            Text("Make Your Guess")
+                .font(.headline)
 
-            GuessHistoryView(guesses: viewModel.state.guesses, nameForCode: viewModel.countryName(for:), isCorrect: viewModel.guessIsCorrect(_:))
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.secondary)
+                TextField("Type a country name...", text: $guessText)
+                    .textFieldStyle(.plain)
+                    .focused($isSearchFocused)
+                    .disabled(viewModel.state.status != .playing)
+                    .onSubmit {
+                        if let match = displayedCountries.first {
+                            viewModel.submitGuess(match)
+                            guessText = ""
+                            isSearchFocused = false
+                        }
+                    }
+                if !guessText.isEmpty {
+                    Button {
+                        guessText = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(.systemGray6))
+            )
         }
     }
 }
 
 private struct ClueCardView: View {
     let clue: Clue
-    let index: Int
+
+    private var categoryColor: Color {
+        switch clue.label?.lowercased() {
+        case "geography": return Color(red: 0.15, green: 0.55, blue: 0.52)
+        case "culture": return Color(red: 0.6, green: 0.35, blue: 0.7)
+        case "food": return Color.orange
+        case "landmark": return Color(red: 0.2, green: 0.5, blue: 0.8)
+        case "flag": return Color.red
+        default: return .secondary
+        }
+    }
+
+    private var categoryIcon: String {
+        switch clue.label?.lowercased() {
+        case "geography": return "lock"
+        case "culture": return "theatermasks"
+        case "food": return "fork.knife"
+        case "landmark": return "building.columns"
+        case "flag": return "flag"
+        default: return "questionmark.circle"
+        }
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Text("Clue \(index)")
-                    .font(.headline)
-                Spacer()
+            HStack(spacing: 6) {
+                Image(systemName: categoryIcon)
+                    .font(.caption)
+                    .foregroundColor(categoryColor)
                 if let label = clue.label {
-                    Text(label)
-                        .font(.caption)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Color.blue.opacity(0.15))
-                        .cornerRadius(8)
+                    Text(label.uppercased())
+                        .font(.caption.bold())
+                        .foregroundColor(categoryColor)
+                        .tracking(0.5)
                 }
             }
 
@@ -120,13 +261,14 @@ private struct ClueCardView: View {
             case .text:
                 Text(clue.value)
                     .font(.body)
+                    .foregroundColor(.primary)
             case .image:
                 AsyncImage(url: URL(string: clue.value)) { phase in
                     switch phase {
                     case .empty:
                         ZStack {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.gray.opacity(0.15))
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.gray.opacity(0.1))
                             ProgressView()
                         }
                         .frame(height: 180)
@@ -136,11 +278,11 @@ private struct ClueCardView: View {
                             .scaledToFill()
                             .frame(height: 180)
                             .clipped()
-                            .cornerRadius(12)
+                            .cornerRadius(10)
                     case .failure:
                         ZStack {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.gray.opacity(0.15))
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.gray.opacity(0.1))
                             Image(systemName: "photo")
                                 .font(.largeTitle)
                                 .foregroundColor(.secondary)
@@ -152,81 +294,13 @@ private struct ClueCardView: View {
                 }
             }
         }
-        .padding(14)
-        .background(Color(.secondarySystemBackground))
-        .cornerRadius(14)
-    }
-}
-
-private struct GuessHistoryView: View {
-    let guesses: [String]
-    let nameForCode: (String) -> String
-    let isCorrect: (String) -> Bool
-
-    private let columns = [GridItem(.adaptive(minimum: 120), spacing: 8)]
-
-    var body: some View {
-        if guesses.isEmpty {
-            Text("No guesses yet")
-                .foregroundColor(.secondary)
-        } else {
-            LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
-                ForEach(guesses.reversed(), id: \.self) { code in
-                    HStack(spacing: 6) {
-                        Text(nameForCode(code))
-                            .font(.subheadline.weight(.semibold))
-                        Text(isCorrect(code) ? "✅" : "❌")
-                    }
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 8)
-                    .background(Color(.tertiarySystemBackground))
-                    .cornerRadius(10)
-                }
-            }
-        }
-    }
-}
-
-private struct CountryPickerView: View {
-    let countries: [Country]
-    let onSelect: (Country) -> Void
-
-    @Environment(\.dismiss) private var dismiss
-    @State private var searchText = ""
-
-    var filtered: [Country] {
-        if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            return countries
-        }
-        return countries.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-    }
-
-    var body: some View {
-        NavigationStack {
-            List(filtered) { country in
-                Button(action: {
-                    onSelect(country)
-                    dismiss()
-                }) {
-                    VStack(alignment: .leading) {
-                        Text(country.name)
-                            .font(.body)
-                        Text(country.continent)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
-            .navigationTitle("Pick a country")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") {
-                        dismiss()
-                    }
-                }
-            }
-            .searchable(text: $searchText)
-        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(Color.white)
+                .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
+        )
     }
 }
 
