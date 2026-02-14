@@ -34,3 +34,9 @@ enum GameStatus: String, Codable {
     case won
     case lost
 }
+
+enum GuessProximity {
+    case correct   // green — exact match
+    case close     // yellow — same continent
+    case far       // red — different continent
+}

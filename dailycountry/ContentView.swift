@@ -1,5 +1,4 @@
 import SwiftUI
-import UIKit
 
 struct ContentView: View {
     @StateObject private var viewModel = GameViewModel()
@@ -35,24 +34,20 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
 
-            VStack(spacing: 0) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        header
-                        cluesRemainingBar
-                        clueSection
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    header
+                    cluesRemainingBar
+                    if viewModel.state.status == .playing {
+                        guessSection
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 12)
-                    .padding(.bottom, 20)
+                    clueSection
                 }
-
-                Divider()
-                guessSection
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 16)
-                    .background(Color.white.opacity(0.8))
+                .padding(.horizontal, 20)
+                .padding(.top, 12)
+                .padding(.bottom, 20)
             }
+            .scrollDismissesKeyboard(.interactively)
         }
         .onAppear {
             viewModel.loadOrCreateToday()
@@ -143,13 +138,59 @@ struct ContentView: View {
 
             ForEach(0..<viewModel.state.revealedClues, id: \.self) { index in
                 let clue = viewModel.answerCountry.clues[index]
-                ClueCardView(clue: clue)
+                VStack(alignment: .leading, spacing: 8) {
+                    ClueCardView(clue: clue)
+                    if index < viewModel.state.guesses.count {
+                        let code = viewModel.state.guesses[index]
+                        GuessResultBadge(
+                            countryName: viewModel.countryName(for: code),
+                            proximity: viewModel.guessProximity(for: code)
+                        )
+                    }
+                }
             }
         }
     }
 
     private var guessSection: some View {
         VStack(alignment: .leading, spacing: 10) {
+            Text("Make Your Guess")
+                .font(.headline)
+
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.secondary)
+                TextField("Type a country name...", text: $guessText)
+                    .textFieldStyle(.plain)
+                    .focused($isSearchFocused)
+                    .disabled(viewModel.state.status != .playing)
+                    .autocorrectionDisabled()
+                    .onSubmit {
+                        if let match = displayedCountries.first {
+                            viewModel.submitGuess(match)
+                            guessText = ""
+                            isSearchFocused = false
+                        }
+                    }
+                if !guessText.isEmpty {
+                    Button {
+                        guessText = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(.systemGray6))
+            )
+            .contentShape(Rectangle())
+            .onTapGesture {
+                isSearchFocused = true
+            }
+
             // Country list shown when search is focused
             if isSearchFocused && viewModel.state.status == .playing {
                 ScrollView {
@@ -179,42 +220,54 @@ struct ContentView: View {
                 .background(
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color.white)
-                        .shadow(color: .black.opacity(0.08), radius: 8, y: -2)
+                        .shadow(color: .black.opacity(0.08), radius: 8, y: 2)
                 )
             }
-
-            Text("Make Your Guess")
-                .font(.headline)
-
-            HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.secondary)
-                TextField("Type a country name...", text: $guessText)
-                    .textFieldStyle(.plain)
-                    .focused($isSearchFocused)
-                    .disabled(viewModel.state.status != .playing)
-                    .onSubmit {
-                        if let match = displayedCountries.first {
-                            viewModel.submitGuess(match)
-                            guessText = ""
-                            isSearchFocused = false
-                        }
-                    }
-                if !guessText.isEmpty {
-                    Button {
-                        guessText = ""
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
-            .padding(14)
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color(.systemGray6))
-            )
         }
+    }
+}
+
+private struct GuessResultBadge: View {
+    let countryName: String
+    let proximity: GuessProximity
+
+    private var backgroundColor: Color {
+        switch proximity {
+        case .correct: return .green
+        case .close: return .yellow
+        case .far: return .red
+        }
+    }
+
+    private var foregroundColor: Color {
+        switch proximity {
+        case .close: return .black
+        default: return .white
+        }
+    }
+
+    private var iconName: String {
+        switch proximity {
+        case .correct: return "checkmark"
+        case .close: return "arrow.right"
+        case .far: return "xmark"
+        }
+    }
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: iconName)
+                .font(.caption.bold())
+            Text(countryName)
+                .font(.caption.bold())
+        }
+        .foregroundColor(foregroundColor)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(
+            Capsule()
+                .fill(backgroundColor)
+        )
     }
 }
 

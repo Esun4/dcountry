@@ -13,8 +13,8 @@ enum Countries {
                 Clue(type: .text, value: "Known for meticulous seasonal aesthetics and a deep respect for craft.", label: "Culture"),
                 Clue(type: .text, value: "Rice, noodles, and delicate broths are staples in everyday meals.", label: "Food"),
                 Clue(type: .text, value: "An island nation off the eastern edge of a large continent.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/12/Mount_Fuji_from_Hotel_Lake_Kawaguchiko_2019-05-01.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/6/66/Mount_Fuji_at_sunset%2C_March_2025.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/jp.png", label: "Flag")
             ]
         ),
         Country(
@@ -29,7 +29,7 @@ enum Countries {
                 Clue(type: .text, value: "Baguettes and cheese are everyday icons here.", label: "Food"),
                 Clue(type: .text, value: "Borders both the Atlantic Ocean and the Mediterranean Sea.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/fr.png", label: "Flag")
             ]
         ),
         Country(
@@ -44,7 +44,7 @@ enum Countries {
                 Clue(type: .text, value: "Coffee and tropical fruits are part of daily life.", label: "Food"),
                 Clue(type: .text, value: "The largest country on its continent.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Christ_the_Redeemer_-_Cristo_Redentor.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/br.png", label: "Flag")
             ]
         ),
         Country(
@@ -58,8 +58,8 @@ enum Countries {
                 Clue(type: .text, value: "A bilingual country known for politeness and winter sports.", label: "Culture"),
                 Clue(type: .text, value: "Maple syrup is a beloved staple.", label: "Food"),
                 Clue(type: .text, value: "Spans from the Atlantic to the Pacific and into the Arctic.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/9e/CN_Tower_Toronto_2013.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/96/Toronto_-_ON_-_Toronto_Harbourfront7.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/ca.png", label: "Flag")
             ]
         ),
         Country(
@@ -73,8 +73,8 @@ enum Countries {
                 Clue(type: .text, value: "Home to world-class long-distance runners.", label: "Culture"),
                 Clue(type: .text, value: "Tea is one of the most widely enjoyed drinks.", label: "Daily Life"),
                 Clue(type: .text, value: "Located on the equator in East Africa.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mount_Kenya.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mount_Kenya.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/ke.png", label: "Flag")
             ]
         ),
         Country(
@@ -89,7 +89,7 @@ enum Countries {
                 Clue(type: .text, value: "Spices and flatbreads are core to many meals.", label: "Food"),
                 Clue(type: .text, value: "A peninsula in South Asia with a long coastline.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/in.png", label: "Flag")
             ]
         ),
         Country(
@@ -119,7 +119,7 @@ enum Countries {
                 Clue(type: .text, value: "Fish is common on the table.", label: "Food"),
                 Clue(type: .text, value: "Located in Northern Europe with a long Arctic coastline.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Geirangerfjord.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/no.png", label: "Flag")
             ]
         ),
         Country(
@@ -134,7 +134,7 @@ enum Countries {
                 Clue(type: .text, value: "Corn tortillas and chilies are staples.", label: "Food"),
                 Clue(type: .text, value: "Located between the Pacific Ocean and the Gulf of Mexico.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/94/Chichen_Itza_3.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/mx.png", label: "Flag")
             ]
         ),
         Country(
@@ -164,7 +164,7 @@ enum Countries {
                 Clue(type: .text, value: "Pasta and olive oil are everyday essentials.", label: "Food"),
                 Clue(type: .text, value: "A boot-shaped peninsula in southern Europe.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/it.png", label: "Flag")
             ]
         ),
         Country(
@@ -179,7 +179,7 @@ enum Countries {
                 Clue(type: .text, value: "Fermented dishes are common on the table.", label: "Food"),
                 Clue(type: .text, value: "Located on the southern part of a peninsula in East Asia.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gyeongbokgung_Geunjeongjeon.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/kr.png", label: "Flag")
             ]
         ),
         Country(
@@ -209,7 +209,7 @@ enum Countries {
                 Clue(type: .text, value: "Balanced flavors of sweet, sour, salty, and spicy.", label: "Food"),
                 Clue(type: .text, value: "Located in mainland Southeast Asia.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/50/Wat_Arun%2C_Bangkok.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/th.png", label: "Flag")
             ]
         ),
         Country(
@@ -238,8 +238,8 @@ enum Countries {
                 Clue(type: .text, value: "Ancient myths and philosophy are central to its legacy.", label: "History"),
                 Clue(type: .text, value: "Olive oil and feta are common staples.", label: "Food"),
                 Clue(type: .text, value: "A country of islands and peninsulas in the Aegean Sea.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Parthenon_from_west.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/gr.png", label: "Flag")
             ]
         ),
         Country(
@@ -254,7 +254,7 @@ enum Countries {
                 Clue(type: .text, value: "Ceviche is a national dish.", label: "Food"),
                 Clue(type: .text, value: "Includes the Andes mountains and Amazon rainforest.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/pe.png", label: "Flag")
             ]
         ),
         Country(
@@ -284,7 +284,7 @@ enum Countries {
                 Clue(type: .text, value: "Tapas are a popular way to eat socially.", label: "Food"),
                 Clue(type: .text, value: "Occupies most of the Iberian Peninsula.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sagrada_Familia_01.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/es.png", label: "Flag")
             ]
         ),
         Country(
@@ -299,7 +299,7 @@ enum Countries {
                 Clue(type: .text, value: "Bread culture is huge, with hundreds of varieties.", label: "Food"),
                 Clue(type: .text, value: "Located in central Europe with many bordering countries.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Brandenburger_Tor_abends.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/de.png", label: "Flag")
             ]
         ),
         Country(
@@ -314,7 +314,7 @@ enum Countries {
                 Clue(type: .text, value: "Burgers, barbecue, and regional cuisines define its food scene.", label: "Food"),
                 Clue(type: .text, value: "Stretches from the Atlantic to the Pacific across a large continent.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Statue_of_Liberty%2C_NY.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/us.png", label: "Flag")
             ]
         ),
         Country(
@@ -329,7 +329,7 @@ enum Countries {
                 Clue(type: .text, value: "Afternoon tea and fish and chips are iconic traditions.", label: "Food"),
                 Clue(type: .text, value: "An island nation off the northwest coast of mainland Europe.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/gb.png", label: "Flag")
             ]
         ),
         Country(
@@ -344,7 +344,7 @@ enum Countries {
                 Clue(type: .text, value: "Dumplings, noodles, and tea are deeply woven into daily life.", label: "Food"),
                 Clue(type: .text, value: "The most populous country in East Asia, spanning deserts and mountains.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/cn.png", label: "Flag")
             ]
         ),
         Country(
@@ -359,7 +359,7 @@ enum Countries {
                 Clue(type: .text, value: "Borscht, blini, and hearty soups are traditional fare.", label: "Food"),
                 Clue(type: .text, value: "The largest country by area, spanning two continents.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Above_the_Kremlin.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/ru.png", label: "Flag")
             ]
         ),
         Country(
@@ -373,8 +373,8 @@ enum Countries {
                 Clue(type: .text, value: "A crossroads of civilizations blending Eastern and Western traditions.", label: "Culture"),
                 Clue(type: .text, value: "Kebabs, baklava, and strong coffee are beloved staples.", label: "Food"),
                 Clue(type: .text, value: "Borders both the Mediterranean and the Black Sea.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Hagia_Sophia_Mars_2013.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/tr.png", label: "Flag")
             ]
         ),
         Country(
@@ -389,7 +389,7 @@ enum Countries {
                 Clue(type: .text, value: "Salted cod dishes and custard tarts are national favorites.", label: "Food"),
                 Clue(type: .text, value: "Located on the western edge of the Iberian Peninsula.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Belem_Tower%2C_Lisbon%2C_Portugal.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/pt.png", label: "Flag")
             ]
         ),
         Country(
@@ -404,7 +404,7 @@ enum Countries {
                 Clue(type: .text, value: "Cheese and herring are traditional favorites.", label: "Food"),
                 Clue(type: .text, value: "A low-lying country on the North Sea coast of Western Europe.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/be/KeijssersNL.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/nl.png", label: "Flag")
             ]
         ),
         Country(
@@ -419,7 +419,7 @@ enum Countries {
                 Clue(type: .text, value: "Meatballs and crispbread are classic comfort foods.", label: "Food"),
                 Clue(type: .text, value: "A Scandinavian country stretching far north into the Arctic.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/8/80/Stockholm_old_town_2002.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/se.png", label: "Flag")
             ]
         ),
         Country(
@@ -433,8 +433,8 @@ enum Countries {
                 Clue(type: .text, value: "Known for neutrality, precision watches, and banking.", label: "Culture"),
                 Clue(type: .text, value: "Cheese fondue and chocolate are world-famous exports.", label: "Food"),
                 Clue(type: .text, value: "A landlocked Alpine country in central Europe.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/6/68/Matterhorn_from_Domh%C3%BCtte_-_2.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/6/60/Matterhorn_from_Domh%C3%BCtte_-_2.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/ch.png", label: "Flag")
             ]
         ),
         Country(
@@ -448,8 +448,8 @@ enum Countries {
                 Clue(type: .text, value: "Known for storytelling, traditional music, and ancient castles.", label: "Culture"),
                 Clue(type: .text, value: "Stews, soda bread, and pub culture are part of everyday life.", label: "Food"),
                 Clue(type: .text, value: "An island in the North Atlantic, west of Great Britain.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Cliffs_of_Moher.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cliffs_of_Moher.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/ie.png", label: "Flag")
             ]
         ),
         Country(
@@ -464,7 +464,7 @@ enum Countries {
                 Clue(type: .text, value: "Braai (barbecue) is a cherished social tradition.", label: "Food"),
                 Clue(type: .text, value: "Located at the southern tip of a large continent.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Table_Mountain_DanieVDM.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/za.png", label: "Flag")
             ]
         ),
         Country(
@@ -479,7 +479,7 @@ enum Countries {
                 Clue(type: .text, value: "Coffee from this country is among the finest in the world.", label: "Food"),
                 Clue(type: .text, value: "The only South American country with coastlines on both the Pacific and Caribbean.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cartagena_de_Indias_desde_el_cerro_La_Popa.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/co.png", label: "Flag")
             ]
         ),
         Country(
@@ -494,7 +494,7 @@ enum Countries {
                 Clue(type: .text, value: "Fresh herbs, rice noodles, and broth-based soups are everyday staples.", label: "Food"),
                 Clue(type: .text, value: "A long, narrow country along the eastern coast of a Southeast Asian peninsula.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/16/Ha_Long_Bay%2C_Vietnam.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/vn.png", label: "Flag")
             ]
         ),
         Country(
@@ -508,8 +508,8 @@ enum Countries {
                 Clue(type: .text, value: "Home to hundreds of ethnic groups and a rich tradition of batik.", label: "Culture"),
                 Clue(type: .text, value: "Rice with sambal and satay skewers are popular across the islands.", label: "Food"),
                 Clue(type: .text, value: "A vast archipelago straddling the equator in Southeast Asia.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/01/Borobudur-Nothwest-view.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Borobudur-Nothwest-view.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/id.png", label: "Flag")
             ]
         ),
         Country(
@@ -524,7 +524,7 @@ enum Countries {
                 Clue(type: .text, value: "Adobo and rice are everyday comfort food.", label: "Food"),
                 Clue(type: .text, value: "An archipelago in the western Pacific Ocean.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/05/Chocolate_Hills_overview.JPG", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/ph.png", label: "Flag")
             ]
         ),
         Country(
@@ -539,7 +539,7 @@ enum Countries {
                 Clue(type: .text, value: "Black beans, rice, and roast pork are daily staples.", label: "Food"),
                 Clue(type: .text, value: "The largest island in the Caribbean Sea.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/f5/El_Capitolio_Havana.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/cu.png", label: "Flag")
             ]
         ),
         Country(
@@ -554,7 +554,7 @@ enum Countries {
                 Clue(type: .text, value: "Lamb, seafood, and skyr are dietary staples.", label: "Food"),
                 Clue(type: .text, value: "A volcanic island nation just south of the Arctic Circle.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Seljalandsfoss%2C_Su%C3%B0urland%2C_Islandia%2C_2014-08-16%2C_DD_201-203_HDR.JPG", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/is.png", label: "Flag")
             ]
         ),
         Country(
@@ -568,8 +568,8 @@ enum Countries {
                 Clue(type: .text, value: "Known worldwide for its music, sprinters, and laid-back culture.", label: "Culture"),
                 Clue(type: .text, value: "Jerk-spiced meats and tropical fruits are everywhere.", label: "Food"),
                 Clue(type: .text, value: "A Caribbean island south of Cuba.", label: "Geography"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Dunn%27s_River_Falls_%28Jamaica%29.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg", label: "Flag")
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/6/63/Dunns_River_Falls_Photo_D_Ramey_Logan.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://flagcdn.com/w320/jm.png", label: "Flag")
             ]
         ),
         Country(
@@ -584,7 +584,7 @@ enum Countries {
                 Clue(type: .text, value: "Hawker centers serve incredible and affordable food from many cuisines.", label: "Food"),
                 Clue(type: .text, value: "A tiny island city-state at the tip of a Southeast Asian peninsula.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Marina_Bay_Sands_in_the_evening_-_20101120.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/sg.png", label: "Flag")
             ]
         ),
         Country(
@@ -599,7 +599,7 @@ enum Countries {
                 Clue(type: .text, value: "Seafood empanadas and fresh fish are everyday fare.", label: "Food"),
                 Clue(type: .text, value: "A long, narrow country along the western coast of South America.", label: "Geography"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Torres_del_Paine_Cuernos.jpg", label: "Landmark"),
-                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg", label: "Flag")
+                Clue(type: .image, value: "https://flagcdn.com/w320/cl.png", label: "Flag")
             ]
         )
     ]

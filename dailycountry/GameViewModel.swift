@@ -72,6 +72,12 @@ final class GameViewModel: ObservableObject {
         code == state.countryCode
     }
 
+    func guessProximity(for guessCode: String) -> GuessProximity {
+        if guessCode == state.countryCode { return .correct }
+        let guessContinent = countries.first(where: { $0.code == guessCode })?.continent
+        return guessContinent == answerCountry.continent ? .close : .far
+    }
+
     func shareSummary() -> String {
         let resultSymbol = state.status == .won ? "✅" : "❌"
         let attempts = state.status == .won ? "\(state.guesses.count)/5" : "5/5"
