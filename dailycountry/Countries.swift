@@ -301,6 +301,306 @@ enum Countries {
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Brandenburger_Tor_abends.jpg", label: "Landmark"),
                 Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg", label: "Flag")
             ]
+        ),
+        Country(
+            id: "US",
+            code: "US",
+            name: "United States",
+            capital: "Washington, D.C.",
+            continent: "North America",
+            funFact: "The United States has the world\'s largest economy by nominal GDP.",
+            clues: [
+                Clue(type: .text, value: "A melting pot of cultures with a strong tradition of individual liberty.", label: "Culture"),
+                Clue(type: .text, value: "Burgers, barbecue, and regional cuisines define its food scene.", label: "Food"),
+                Clue(type: .text, value: "Stretches from the Atlantic to the Pacific across a large continent.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Statue_of_Liberty%2C_NY.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "GB",
+            code: "GB",
+            name: "United Kingdom",
+            capital: "London",
+            continent: "Europe",
+            funFact: "The UK invented the world\'s first public railway.",
+            clues: [
+                Clue(type: .text, value: "Known for its monarchy, literary heritage, and dry humor.", label: "Culture"),
+                Clue(type: .text, value: "Afternoon tea and fish and chips are iconic traditions.", label: "Food"),
+                Clue(type: .text, value: "An island nation off the northwest coast of mainland Europe.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/93/Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "CN",
+            code: "CN",
+            name: "China",
+            capital: "Beijing",
+            continent: "Asia",
+            funFact: "China\'s Great Wall stretches over 13,000 miles.",
+            clues: [
+                Clue(type: .text, value: "One of the world\'s oldest civilizations with rich traditions in calligraphy and philosophy.", label: "Culture"),
+                Clue(type: .text, value: "Dumplings, noodles, and tea are deeply woven into daily life.", label: "Food"),
+                Clue(type: .text, value: "The most populous country in East Asia, spanning deserts and mountains.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "RU",
+            code: "RU",
+            name: "Russia",
+            capital: "Moscow",
+            continent: "Europe",
+            funFact: "Russia spans 11 time zones, making it the widest country on Earth.",
+            clues: [
+                Clue(type: .text, value: "Famous for ballet, literature, and long winters.", label: "Culture"),
+                Clue(type: .text, value: "Borscht, blini, and hearty soups are traditional fare.", label: "Food"),
+                Clue(type: .text, value: "The largest country by area, spanning two continents.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Above_the_Kremlin.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "TR",
+            code: "TR",
+            name: "Turkey",
+            capital: "Ankara",
+            continent: "Europe",
+            funFact: "Turkey straddles two continents: Europe and Asia.",
+            clues: [
+                Clue(type: .text, value: "A crossroads of civilizations blending Eastern and Western traditions.", label: "Culture"),
+                Clue(type: .text, value: "Kebabs, baklava, and strong coffee are beloved staples.", label: "Food"),
+                Clue(type: .text, value: "Borders both the Mediterranean and the Black Sea.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Hagia_Sophia_Mars_2013.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "PT",
+            code: "PT",
+            name: "Portugal",
+            capital: "Lisbon",
+            continent: "Europe",
+            funFact: "Portugal is one of the oldest nations in Europe, founded in 1143.",
+            clues: [
+                Clue(type: .text, value: "Known for soulful folk music and a proud maritime history.", label: "Culture"),
+                Clue(type: .text, value: "Salted cod dishes and custard tarts are national favorites.", label: "Food"),
+                Clue(type: .text, value: "Located on the western edge of the Iberian Peninsula.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Belem_Tower%2C_Lisbon%2C_Portugal.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "NL",
+            code: "NL",
+            name: "Netherlands",
+            capital: "Amsterdam",
+            continent: "Europe",
+            funFact: "About a third of the Netherlands lies below sea level.",
+            clues: [
+                Clue(type: .text, value: "Famous for cycling culture, tulips, and Golden Age paintings.", label: "Culture"),
+                Clue(type: .text, value: "Cheese and herring are traditional favorites.", label: "Food"),
+                Clue(type: .text, value: "A low-lying country on the North Sea coast of Western Europe.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/be/KeijssersNL.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "SE",
+            code: "SE",
+            name: "Sweden",
+            capital: "Stockholm",
+            continent: "Europe",
+            funFact: "Sweden has the right of public access, allowing anyone to roam the countryside.",
+            clues: [
+                Clue(type: .text, value: "Known for minimalist design, innovation, and a love of nature.", label: "Culture"),
+                Clue(type: .text, value: "Meatballs and crispbread are classic comfort foods.", label: "Food"),
+                Clue(type: .text, value: "A Scandinavian country stretching far north into the Arctic.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/8/80/Stockholm_old_town_2002.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "CH",
+            code: "CH",
+            name: "Switzerland",
+            capital: "Bern",
+            continent: "Europe",
+            funFact: "Switzerland has four official languages: German, French, Italian, and Romansh.",
+            clues: [
+                Clue(type: .text, value: "Known for neutrality, precision watches, and banking.", label: "Culture"),
+                Clue(type: .text, value: "Cheese fondue and chocolate are world-famous exports.", label: "Food"),
+                Clue(type: .text, value: "A landlocked Alpine country in central Europe.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/6/68/Matterhorn_from_Domh%C3%BCtte_-_2.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "IE",
+            code: "IE",
+            name: "Ireland",
+            capital: "Dublin",
+            continent: "Europe",
+            funFact: "Ireland is known as the Emerald Isle for its lush green landscape.",
+            clues: [
+                Clue(type: .text, value: "Known for storytelling, traditional music, and ancient castles.", label: "Culture"),
+                Clue(type: .text, value: "Stews, soda bread, and pub culture are part of everyday life.", label: "Food"),
+                Clue(type: .text, value: "An island in the North Atlantic, west of Great Britain.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Cliffs_of_Moher.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "ZA",
+            code: "ZA",
+            name: "South Africa",
+            capital: "Pretoria",
+            continent: "Africa",
+            funFact: "South Africa has three capital cities for its three branches of government.",
+            clues: [
+                Clue(type: .text, value: "Called the Rainbow Nation for its cultural diversity.", label: "Culture"),
+                Clue(type: .text, value: "Braai (barbecue) is a cherished social tradition.", label: "Food"),
+                Clue(type: .text, value: "Located at the southern tip of a large continent.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Table_Mountain_DanieVDM.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "CO",
+            code: "CO",
+            name: "Colombia",
+            capital: "Bogota",
+            continent: "South America",
+            funFact: "Colombia is the world\'s leading producer of emeralds.",
+            clues: [
+                Clue(type: .text, value: "Known for vibrant salsa music and colorful festivals.", label: "Culture"),
+                Clue(type: .text, value: "Coffee from this country is among the finest in the world.", label: "Food"),
+                Clue(type: .text, value: "The only South American country with coastlines on both the Pacific and Caribbean.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cartagena_de_Indias_desde_el_cerro_La_Popa.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "VN",
+            code: "VN",
+            name: "Vietnam",
+            capital: "Hanoi",
+            continent: "Asia",
+            funFact: "Vietnam is the world\'s second-largest coffee exporter.",
+            clues: [
+                Clue(type: .text, value: "A country with a deep reverence for family and community.", label: "Culture"),
+                Clue(type: .text, value: "Fresh herbs, rice noodles, and broth-based soups are everyday staples.", label: "Food"),
+                Clue(type: .text, value: "A long, narrow country along the eastern coast of a Southeast Asian peninsula.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/1/16/Ha_Long_Bay%2C_Vietnam.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "ID",
+            code: "ID",
+            name: "Indonesia",
+            capital: "Jakarta",
+            continent: "Asia",
+            funFact: "Indonesia is the world\'s largest archipelago with over 17,000 islands.",
+            clues: [
+                Clue(type: .text, value: "Home to hundreds of ethnic groups and a rich tradition of batik.", label: "Culture"),
+                Clue(type: .text, value: "Rice with sambal and satay skewers are popular across the islands.", label: "Food"),
+                Clue(type: .text, value: "A vast archipelago straddling the equator in Southeast Asia.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/01/Borobudur-Nothwest-view.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "PH",
+            code: "PH",
+            name: "Philippines",
+            capital: "Manila",
+            continent: "Asia",
+            funFact: "The Philippines has over 7,600 islands.",
+            clues: [
+                Clue(type: .text, value: "Known for warm hospitality, fiestas, and a blend of Eastern and Western influences.", label: "Culture"),
+                Clue(type: .text, value: "Adobo and rice are everyday comfort food.", label: "Food"),
+                Clue(type: .text, value: "An archipelago in the western Pacific Ocean.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/05/Chocolate_Hills_overview.JPG", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "CU",
+            code: "CU",
+            name: "Cuba",
+            capital: "Havana",
+            continent: "North America",
+            funFact: "Cuba is the largest island in the Caribbean.",
+            clues: [
+                Clue(type: .text, value: "Famous for classic cars, cigars, and vibrant street music.", label: "Culture"),
+                Clue(type: .text, value: "Black beans, rice, and roast pork are daily staples.", label: "Food"),
+                Clue(type: .text, value: "The largest island in the Caribbean Sea.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/f/f5/El_Capitolio_Havana.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "IS",
+            code: "IS",
+            name: "Iceland",
+            capital: "Reykjavik",
+            continent: "Europe",
+            funFact: "Iceland runs almost entirely on renewable energy.",
+            clues: [
+                Clue(type: .text, value: "A nation of sagas, hot springs, and a strong literary tradition.", label: "Culture"),
+                Clue(type: .text, value: "Lamb, seafood, and skyr are dietary staples.", label: "Food"),
+                Clue(type: .text, value: "A volcanic island nation just south of the Arctic Circle.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Seljalandsfoss%2C_Su%C3%B0urland%2C_Islandia%2C_2014-08-16%2C_DD_201-203_HDR.JPG", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "JM",
+            code: "JM",
+            name: "Jamaica",
+            capital: "Kingston",
+            continent: "North America",
+            funFact: "Jamaica is the birthplace of reggae music.",
+            clues: [
+                Clue(type: .text, value: "Known worldwide for its music, sprinters, and laid-back culture.", label: "Culture"),
+                Clue(type: .text, value: "Jerk-spiced meats and tropical fruits are everywhere.", label: "Food"),
+                Clue(type: .text, value: "A Caribbean island south of Cuba.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Dunn%27s_River_Falls_%28Jamaica%29.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "SG",
+            code: "SG",
+            name: "Singapore",
+            capital: "Singapore",
+            continent: "Asia",
+            funFact: "Singapore is both a city and a country.",
+            clues: [
+                Clue(type: .text, value: "A multicultural hub known for cleanliness and efficiency.", label: "Culture"),
+                Clue(type: .text, value: "Hawker centers serve incredible and affordable food from many cuisines.", label: "Food"),
+                Clue(type: .text, value: "A tiny island city-state at the tip of a Southeast Asian peninsula.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Marina_Bay_Sands_in_the_evening_-_20101120.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg", label: "Flag")
+            ]
+        ),
+        Country(
+            id: "CL",
+            code: "CL",
+            name: "Chile",
+            capital: "Santiago",
+            continent: "South America",
+            funFact: "Chile is home to the driest desert on Earth, the Atacama.",
+            clues: [
+                Clue(type: .text, value: "Known for its poets, wine culture, and strong traditions.", label: "Culture"),
+                Clue(type: .text, value: "Seafood empanadas and fresh fish are everyday fare.", label: "Food"),
+                Clue(type: .text, value: "A long, narrow country along the western coast of South America.", label: "Geography"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Torres_del_Paine_Cuernos.jpg", label: "Landmark"),
+                Clue(type: .image, value: "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg", label: "Flag")
+            ]
         )
     ]
 }
